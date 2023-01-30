@@ -9,17 +9,19 @@ Programmer  : Mohammed Mamun Hossain,
 Date        : 30/01/2023
 ---------------------------------------------------------------------
 */
-
 #include <stdio.h>
 
 int main() {
-  int x,y,z = 10;
-  x += 5;
-  y *= 5;
-  z %= 5;
-  printf("%d\n", x);
-  printf("%d\n", y);
-  printf("%d\n", z);
+
+  int x= 10, y=5, z=1;
+
+  x += 2;
+  y *= 2;
+  z %= 2;
+
+  printf(" %d \n", x);
+  printf(" %d \n", y);
+  printf(" %d \n", z);
 
   return 0;
 }
