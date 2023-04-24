@@ -39,7 +39,7 @@ Functions
 
 Files
 
-Structures
+Structures and Union
 
 Enums
 
