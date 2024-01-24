@@ -15,11 +15,13 @@ int main() {
   // Create variables
   int myNum = 5;               // Integer (whole number)
   float myFloatNum = 5.99;     // Floating point number
+  double myDoubleNum = 50000.99;     // Double  number
   char myLetter = 'D';         // Character
-  
+
   // Print variables
   printf("%d\n", myNum);
   printf("%f\n", myFloatNum);
+  printf("%lf\n", myDoubleNum);
   printf("%c\n", myLetter);
   return 0;
 }
