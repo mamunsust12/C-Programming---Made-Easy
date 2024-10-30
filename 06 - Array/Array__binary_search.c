@@ -1,39 +1,38 @@
 #include <stdio.h>
+#include <math.h>
 int main()
 {
-    int i, first, last, middle, n, item, array[100];
+  int  item, i, n,mid, flag=0;
 
-    printf("Enter number of elements\n");
-    scanf("%d", &n);
+  printf("Enter number of elements in array\n");
+  scanf("%d", &n);
+  int data[n];
 
-    printf("Enter %d integers\n", n);
+  printf("Enter %d integer(s)\n", n);
+  for (i= 0; i < n; i++)
+    scanf("%d", &data[i]);
 
-    for (i= 0; i < n; i++)
-        scanf("%d", &array[i]);
+  printf("Enter a number to search\n");
+  scanf("%d", &item);
 
-    printf("Enter value to find\n");
-    scanf("%d", &item);
+  int beg=0,end=n-1;
 
-    first = 0;
-    last = n - 1;
-    middle = (first+last)/2;
 
-    while (first <= last)
-    {
-        if (array[middle] < item)
-            first = middle + 1;
-        else if (array[middle] == item)
-        {
-            printf("%d found at location %d.\n", item, middle+1);
-            break;
-        }
-        else
-            last = middle - 1;
+  while(beg<=end){
+    mid=ceil((beg+end)/2); // or mid=beg + (end - beg) / 2;
 
-        middle = (first + last)/2;
-    }
-    if (first > last)
-        printf("Not found! %d isn't present in the list.\n", item);
+    if(item==data[mid]){
+       printf("Item  Found at %d\n",mid);
+       flag=1;
+       break;
+       }
+    else if(item < data[mid])
+        end=mid-1;
+    else
+        beg=mid+1;
+  }
+  if(flag==0)
+     printf("Item Not Found\n");
 
-    return 0;
+  return 0;
 }

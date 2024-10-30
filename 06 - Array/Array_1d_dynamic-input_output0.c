@@ -2,13 +2,13 @@
 
 int  main()
 {
-    int i;
+    int i,data[10];
 
-    int n = sizeof(data)/sizeof(data[0]);
-    printf("%d\n",n);
 
-     int data[5];
-    //fflush( stdout );
+    printf("Enter your Number:  \n");
+    scanf("%d",&n);
+
+
     printf("--------------- input ----------------\n");
     for( i=0; i<n; i++){
         scanf("%d ",&data[i]);
