@@ -3,20 +3,23 @@ In any n credit theory course of BAUST you have to attend in n CTs and of them b
 Now write a program that shows the average of  best n-1 CTs marks out of n CTs.
 Sample input:
                     Enter the value of n: 4
-                    i.	1st CT Marks: 15
-                    ii.	2nd CT Marks: 10
-                    iii.	3rd  CT Marks: 15
-                    iv.	4th  CT Marks: 15
+                        i.	1st CT Marks: 15
+                        ii.	2nd CT Marks: 10
+                        iii.	3rd  CT Marks: 15
+                        iv.	4th  CT Marks: 15
 Sample Output:
-                      Average of best 3 CT marks: 15
+                    Average of best 3 CT marks: 15
 */
 
-#include <stdio.h>
+#include <iostream>
+#include <algorithm> // Include the algorithm header for std::swap
+
+using namespace std;
 
 int main() {
     int n;
 
-     label1:
+    label1:
     printf("Enter the value of n: ");
     scanf("%d", &n);
 
@@ -36,11 +39,8 @@ int main() {
     // Sort the CT marks in descending order
     for (int i = 0; i < n - 1; i++) {
         for (int j = i + 1; j < n; j++) {
-            if (ctMarks[i] < ctMarks[j]) {
-                int temp = ctMarks[i];
-                ctMarks[i] = ctMarks[j];
-                ctMarks[j] = temp;
-            }
+            if (ctMarks[i] < ctMarks[j])
+               swap(&ctMarks[i], &ctMarks[j]);
         }
     }
 
@@ -55,3 +55,5 @@ int main() {
 
     return 0;
 }
+
+

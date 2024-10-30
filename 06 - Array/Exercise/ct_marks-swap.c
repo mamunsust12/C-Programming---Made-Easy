@@ -12,6 +12,9 @@ Sample Output:
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+
+void swap(int *a, int *b) ;
 
 int main() {
     int n;
@@ -36,11 +39,8 @@ int main() {
     // Sort the CT marks in descending order
     for (int i = 0; i < n - 1; i++) {
         for (int j = i + 1; j < n; j++) {
-            if (ctMarks[i] < ctMarks[j]) {
-                int temp = ctMarks[i];
-                ctMarks[i] = ctMarks[j];
-                ctMarks[j] = temp;
-            }
+            if (ctMarks[i] < ctMarks[j])
+               swap(&ctMarks[i], &ctMarks[j]);
         }
     }
 
@@ -54,4 +54,10 @@ int main() {
     printf("\n Average of the %d  best CTs marks: %.2f  \n", n - 1, average);
 
     return 0;
+}
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
