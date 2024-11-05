@@ -1,13 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    char str[] = "madam";  // The input string
-    int length = 5;        // Length of the string "madam"
+    char str[10];  // The input string
+    int length = 0;        // Length of the string "madam"
     int i;
     int flag=0;
+    printf("Enter Your String \n");
+    scanf("%[^\n]s",str);
 
-    // Print the original string
-    printf("Original string: %s\n", str);
+     while(str[length]!='\0')
+           length++;
 
     // Reverse the string in-place
     for (i = 0; i < length / 2; i++) {
