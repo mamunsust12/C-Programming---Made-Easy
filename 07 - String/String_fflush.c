@@ -1,4 +1,4 @@
-/*C program to illustrate situation where 
+/*C program to illustrate situation where
 flush(stdin) is required only in certain compilers.*/
 #include <stdio.h>
 #include<stdlib.h>
@@ -10,7 +10,7 @@ int main()
 	{
 		scanf("%[^\n]s", str);
 		printf("%s\n", str);
-		// fflush(stdin);
+		//fflush(stdin);
 	}
 	return 0;
 }
